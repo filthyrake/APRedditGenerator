@@ -107,10 +107,10 @@ with open("AstroBin.csv", 'w', newline='', encoding='utf-8') as csvfile:
     # Extract and format data for AstroBin
     for data in date_exposure_filter_data.values():  # Access data from the correct dictionary
         astrobin_data = {
-            "Date": data["Date"].split("T")[0],  # Line 64: Access "Date" from the correct dictionary
-            "Duration": f"{data['Exposure']:.4f}",
-            "Filter": filter_replacements_astrobin.get(data["Filter"], data["Filter"]),
-            "Number": data["Count"]
+            "date": data["Date"].split("T")[0],  # Line 64: Access "Date" from the correct dictionary
+            "duration": f"{data['Exposure']:.4f}",
+            "filter": filter_replacements_astrobin.get(data["Filter"], data["Filter"]),
+            "number": data["Count"]
         }
         writer.writerow(astrobin_data)
 
